@@ -10,20 +10,24 @@ namespace CombatHelper {
     }
 
     float applyWeakness(float damageValue, endstone::Entity& attacker) {
-        // Endstone does not yet expose getEffect directly, assuming a placeholder check
-        // if (attacker.hasEffect("weakness")) {
-        //    int weakness = attacker.getEffect("weakness").amplifier + 1;
-        //    return damageValue * std::pow(0.8f, weakness) + ((std::pow(0.8f, weakness) - 1.0f) / 0.4f);
-        // }
+        // Asumsi API Endstone mendukung pengecekan efek (misal: weakness)
+        // int weaknessLevel = attacker.getEffectLevel("weakness"); // Placeholder API
+        int weaknessLevel = 0; // Ganti dengan API pemanggilan level efek asli nanti
+        
+        if (weaknessLevel > 0) {
+            return damageValue * std::pow(0.8f, weaknessLevel) + ((std::pow(0.8f, weaknessLevel) - 1.0f) / 0.4f);
+        }
         return damageValue;
     }
 
     float applyStrength(float damageValue, endstone::Entity& attacker) {
-        // Placeholder check
-        // if (attacker.hasEffect("strength")) {
-        //    int strength = attacker.getEffect("strength").amplifier + 1;
-        //    return damageValue * std::pow(1.3f, strength) + ((std::pow(1.3f, strength) - 1.0f) / 0.3f);
-        // }
+        // Asumsi API Endstone mendukung pengecekan efek (misal: strength)
+        // int strengthLevel = attacker.getEffectLevel("strength"); // Placeholder API
+        int strengthLevel = 0; // Ganti dengan API pemanggilan level efek asli nanti
+        
+        if (strengthLevel > 0) {
+            return damageValue * std::pow(1.3f, strengthLevel) + ((std::pow(1.3f, strengthLevel) - 1.0f) / 0.3f);
+        }
         return damageValue;
     }
 
