@@ -1,6 +1,7 @@
 #pragma once
 #include <endstone/player.h>
 #include <endstone/actor/actor.h>
+#include <endstone/server.h>
 #include <cmath>
 
 namespace WeaponsGen {
