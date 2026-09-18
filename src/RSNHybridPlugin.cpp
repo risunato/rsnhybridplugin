@@ -41,7 +41,7 @@ void RSNHybridPlugin::setupScoreboards() {
         if (!scoreboard->getObjective(obj)) {
             // In Endstone, creating objective might require DisplaySlot or Criteria.
             // Using dummy criteria for these internal scores.
-            scoreboard->addObjective(obj, endstone::Criteria::Dummy, obj);
+            scoreboard->addObjective(obj, endstone::Criteria::Type::Dummy, obj);
         }
     }
     getLogger().info("Dungeons Scoreboards verified and initialized.");

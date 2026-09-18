@@ -34,8 +34,8 @@ void RSNHybridPlugin::initializePlayerScores(endstone::Player& player) {
     for (const auto& objName : objectives) {
         auto obj = scoreboard->getObjective(objName);
         if (obj) {
-            auto score = obj->getScore(player);
-            if (!score->isSet()) {
+            auto score = obj->getScore(&player);
+            if (!score->isScoreSet()) {
                 score->setValue(0);
             }
         }
@@ -59,15 +59,13 @@ void RSNHybridPlugin::onPlayerQuit(endstone::PlayerQuitEvent& event) {
 }
 
 void RSNHybridPlugin::onActorDamage(endstone::ActorDamageEvent& event) {
-    auto* damager = event.getDamager();
-    auto& target = event.getEntity();
+    // Get damager via DamageSource (confirmed from damage_source.h)
+    auto* damager = event.getDamageSource().getActor();
+    auto& target = event.getActor();
 
     if (!damager || !CombatHelper::isValidTarget(target)) return;
 
     // Example logic hook for Dungeons weapon effects
-    // if (damager->isPlayer()) {
-    //    // Check weapon tags, apply special damage
-    // }
 }
 
 void RSNHybridPlugin::onPlayerInteract(endstone::PlayerInteractEvent& event) {
