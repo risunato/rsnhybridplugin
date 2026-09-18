@@ -18,6 +18,9 @@ jobs:
     
     - name: Configure CMake
       shell: bash
+      env:
+        CC: clang
+        CXX: clang++
       run: cmake -B build -S . -DCMAKE_BUILD_TYPE=Release
       
     - name: Build Plugin
