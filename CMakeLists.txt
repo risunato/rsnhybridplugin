@@ -6,6 +6,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 find_package(endstone REQUIRED)
-add_library(rsnhybridplugin MODULE src/main.cpp)
+
+file(GLOB_RECURSE SRC_FILES "src/*.cpp")
+add_library(rsnhybridplugin MODULE ${SRC_FILES})
+target_include_directories(rsnhybridplugin PRIVATE include)
 target_link_libraries(rsnhybridplugin PRIVATE endstone::core)
 set_target_properties(rsnhybridplugin PROPERTIES PREFIX "")
