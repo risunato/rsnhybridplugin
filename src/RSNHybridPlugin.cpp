@@ -54,3 +54,9 @@ void RSNHybridPlugin::onServerLoad(endstone::ServerLoadEvent& event) {
 void RSNHybridPlugin::onBlockBreak(endstone::BlockBreakEvent& event) {
     MoreOresHelper::onBlockBreak(event);
 }
+
+ENDSTONE_PLUGIN("rsnhybridplugin", "1.0.0", RSNHybridPlugin)
+{
+    description = "Hybrid Server Plugin migrating Dungeons & More Ores Addons";
+}
+

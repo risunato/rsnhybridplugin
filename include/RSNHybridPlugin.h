@@ -6,6 +6,8 @@
 #include <endstone/event/player/player_quit_event.h>
 #include <endstone/event/entity/entity_damage_by_entity_event.h>
 #include <endstone/event/player/player_interact_event.h>
+#include <endstone/event/block/block_break_event.h>
+
 
 class RSNHybridPlugin : public endstone::Plugin {
 public:

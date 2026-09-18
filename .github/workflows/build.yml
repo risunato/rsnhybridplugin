@@ -27,7 +27,9 @@ jobs:
         pip install endstone
         
     - name: Configure CMake
-      run: cmake -B build -S . -DCMAKE_BUILD_TYPE=Release
+      run: |
+        python -c "import endstone, os, subprocess, sys; dir=os.path.dirname(endstone.__file__); cmd=['cmake', '-B', 'build', '-S', '.', '-DCMAKE_BUILD_TYPE=Release', f'-DCMAKE_PREFIX_PATH={dir}']; print('Running:', ' '.join(cmd)); sys.exit(subprocess.call(cmd))"
+
       
     - name: Build Plugin
       run: cmake --build build --config Release
