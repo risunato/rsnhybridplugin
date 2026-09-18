@@ -29,8 +29,8 @@ namespace ArmourGen {
     void handle_spookyGourdian(endstone::Player& p) {
 
         auto& server = p.getServer();
-        server.dispatchCommand(server.getCommandSender(), "effect \"" + p.getName() + "\" resistance 2 1 true");
-        server.dispatchCommand(server.getCommandSender(), "effect \"" + p.getName() + "\" fire_resistance 2 1 true");
+        server.dispatchCommand(p, "effect \"" + p.getName() + "\" resistance 2 1 true");
+        server.dispatchCommand(p, "effect \"" + p.getName() + "\" fire_resistance 2 1 true");
         }
 
     void handle_ghostly(endstone::Player& p) {

@@ -9,11 +9,10 @@ namespace ArtefactsGen {
     void handle_blastFungus(endstone::Player& p) {
 
         auto& server = p.getServer();
-        auto& sender = server.getCommandSender();
-        server.dispatchCommand(sender, "playsound artefact.blastfungus.explode @a \"" + p.getName() + "\" 2.0 0.3");
+        server.dispatchCommand(p, "playsound artefact.blastfungus.explode @a \"" + p.getName() + "\" 2.0 0.3");
         // Simulate shooting 5 projectiles via commands since we don't have projectile API yet
         for(int i = 0; i < 5; i++) {
-            server.dispatchCommand(sender, "execute as \"" + p.getName() + "\" at @s run summon dungeons:blast_fungus ^ ^1 ^1");
+            server.dispatchCommand(p, "execute as \"" + p.getName() + "\" at @s run summon dungeons:blast_fungus ^ ^1 ^1");
         }
         }
 
@@ -24,10 +23,9 @@ namespace ArtefactsGen {
     void handle_corruptedBeacon(endstone::Player& p) {
 
         auto& server = p.getServer();
-        auto& sender = server.getCommandSender();
-        server.dispatchCommand(sender, "playsound artefact.corrupted_beacon.beam @a \"" + p.getName() + "\" 1.0 1.0");
-        server.dispatchCommand(sender, "execute as \"" + p.getName() + "\" at @s run particle dungeons:corrupted_beacon_beam ^ ^1 ^5");
-        server.dispatchCommand(sender, "execute as \"" + p.getName() + "\" at @s run damage @e[r=10,c=5] 12 magic entity @s");
+        server.dispatchCommand(p, "playsound artefact.corrupted_beacon.beam @a \"" + p.getName() + "\" 1.0 1.0");
+        server.dispatchCommand(p, "execute as \"" + p.getName() + "\" at @s run particle dungeons:corrupted_beacon_beam ^ ^1 ^5");
+        server.dispatchCommand(p, "execute as \"" + p.getName() + "\" at @s run damage @e[r=10,c=5] 12 magic entity @s");
         }
 
     void handle_corruptedPumpkin(endstone::Player& p) {
@@ -41,10 +39,10 @@ namespace ArtefactsGen {
     void handle_deathCap(endstone::Player& p) {
 
         auto& server = p.getServer();
-        server.dispatchCommand(server.getCommandSender(), "effect \"" + p.getName() + "\" haste 10 1 true");
-        server.dispatchCommand(server.getCommandSender(), "effect \"" + p.getName() + "\" speed 10 1 true");
-        server.dispatchCommand(server.getCommandSender(), "playsound artefact.deathcap.use @a \"" + p.getName() + "\" 1.0 1.0");
-        server.dispatchCommand(server.getCommandSender(), "execute as \"" + p.getName() + "\" at @s run particle dungeons:deathcap_spores ~ ~ ~");
+        server.dispatchCommand(p, "effect \"" + p.getName() + "\" haste 10 1 true");
+        server.dispatchCommand(p, "effect \"" + p.getName() + "\" speed 10 1 true");
+        server.dispatchCommand(p, "playsound artefact.deathcap.use @a \"" + p.getName() + "\" 1.0 1.0");
+        server.dispatchCommand(p, "execute as \"" + p.getName() + "\" at @s run particle dungeons:deathcap_spores ~ ~ ~");
         }
 
     void handle_enchantersTome(endstone::Player& p) {
@@ -86,11 +84,11 @@ namespace ArtefactsGen {
     void handle_lightFeather(endstone::Player& p) {
 
         auto& server = p.getServer();
-        server.dispatchCommand(server.getCommandSender(), "execute as \"" + p.getName() + "\" at @s run tp @s ^ ^1 ^4");
-        server.dispatchCommand(server.getCommandSender(), "playsound artefact.lightfeather.dash @a \"" + p.getName() + "\" 1.0 1.0");
-        server.dispatchCommand(server.getCommandSender(), "execute as \"" + p.getName() + "\" at @s run particle minecraft:cloud ~ ~ ~");
+        server.dispatchCommand(p, "execute as \"" + p.getName() + "\" at @s run tp @s ^ ^1 ^4");
+        server.dispatchCommand(p, "playsound artefact.lightfeather.dash @a \"" + p.getName() + "\" 1.0 1.0");
+        server.dispatchCommand(p, "execute as \"" + p.getName() + "\" at @s run particle minecraft:cloud ~ ~ ~");
         // Stun nearby enemies
-        server.dispatchCommand(server.getCommandSender(), "execute as \"" + p.getName() + "\" at @s run effect @e[r=3,rm=0.1] slowness 2 4 true");
+        server.dispatchCommand(p, "execute as \"" + p.getName() + "\" at @s run effect @e[r=3,rm=0.1] slowness 2 4 true");
         }
 
     void handle_lightningRod(endstone::Player& p) {
