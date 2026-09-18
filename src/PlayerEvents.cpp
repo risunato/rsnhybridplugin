@@ -2,7 +2,10 @@
 #include "CombatHelper.h"
 #include "ArtefactsHelper.h"
 #include "WeaponsHelper.h"
+#include "MoreOresHelper.h"
 #include <endstone/player.h>
+#include <endstone/inventory/player_inventory.h>
+#include <endstone/inventory/item_stack.h>
 #include <endstone/scoreboard/scoreboard.h>
 #include <endstone/scoreboard/objective.h>
 #include <endstone/scoreboard/score.h>
@@ -71,7 +74,13 @@ void RSNHybridPlugin::onActorDamage(endstone::ActorDamageEvent& event) {
 void RSNHybridPlugin::onPlayerInteract(endstone::PlayerInteractEvent& event) {
     auto& player = event.getPlayer();
     
-    // In Endstone API, you would typically check the item the player is holding or interacting with.
-    // std::string itemId = player.getInventory().getItemInMainHand().getType();
-    // ArtefactsHelper::handleArtefactUse(player, itemId);
+    // Process MoreOres interact logic first
+    MoreOresHelper::onPlayerInteract(event);
+
+    // Fetch item in main hand
+    auto item = player.getInventory().getItemInMainHand();
+    if (item.has_value()) {
+        std::string itemId = item->getType();
+        ArtefactsHelper::handleArtefactUse(player, itemId);
+    }
 }
