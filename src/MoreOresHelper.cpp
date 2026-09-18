@@ -8,8 +8,20 @@ namespace MoreOresHelper {
     }
     
     void onPlayerInteract(endstone::PlayerInteractEvent& event) {
-        // Mock Tool Ability
-        MoreOresGen::handle_drill(event.getPlayer());
+        auto& player = event.getPlayer();
+        auto item = player.getInventory().getItemInHand();
+        if (!item) return;
+        
+        auto itemId = item->getType().getId();
+        if (itemId == "nps_mot:drill") {
+            MoreOresGen::handle_drill(player);
+        } else if (itemId == "nps_mot:magnet") {
+            MoreOresGen::handle_magnet(player);
+        } else if (itemId == "nps_mot:emerald_sword") {
+            MoreOresGen::handle_emerald_sword(player);
+        } else if (itemId == "nps_mot:ruby_pickaxe") {
+            MoreOresGen::handle_ruby_pickaxe(player);
+        }
     }
     
     void applyDrillEffect(endstone::Player& player) {}

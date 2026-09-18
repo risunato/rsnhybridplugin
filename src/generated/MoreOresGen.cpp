@@ -7,7 +7,7 @@ namespace MoreOresGen {
         auto& server = p.getServer();
         server.dispatchCommand(p, "execute as \"" + p.getName() + "\" at @s run playsound random.anvil_use @a ~ ~ ~ 1.0 1.5");
         // Trigger 3x3 breaking using commands
-        server.dispatchCommand(p, "execute as \"" + p.getName() + "\" at @s run fill ^-1 ^-1 ^3 ^1 ^1 ^3 air 0 destroy");
+        server.dispatchCommand(p, "execute as \"" + p.getName() + "\" at @s run fill ^-1 ^-1 ^3 ^1 ^1 ^3 air [] destroy");
         }
 
     void handle_magnet(endstone::Player& p) {
