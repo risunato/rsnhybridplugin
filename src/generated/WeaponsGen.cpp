@@ -3575,13 +3575,30 @@ namespace WeaponsGen {
     }
 
     void handle_anchor(endstone::Player& p, endstone::Entity& t) {
-        // Real C++ execution context for anchor
-        // TODO: Convert logic
+        auto loc = t.getLocation();
+        std::string coord = std::to_string(loc.getX()) + " " + std::to_string(loc.getY()) + " " + std::to_string(loc.getZ());
+        auto& server = p.getServer();
+        auto sender = server.getCommandSender();
+        
+        // Particles & Sounds
+        server.dispatchCommand(sender, "particle dungeons:hammer_dust " + coord);
+        server.dispatchCommand(sender, "particle dungeons:anchor_smoke " + coord);
+        server.dispatchCommand(sender, "playsound weapon.anchor.hit @a " + coord + " 0.8");
+        server.dispatchCommand(sender, "playsound random.anvil_land @a " + coord + " 0.4 0.4");
+        
+        // AOE Damage & Gravity Pull
+        server.dispatchCommand(sender, "execute positioned " + coord + " run damage @e[r=3] 10 entity_attack entity \"" + p.getName() + "\"");
+        server.dispatchCommand(sender, "execute positioned " + coord + " as @e[r=4,family=!gravity_immune] run tp @s " + coord);
     }
 
     void handle_axe(endstone::Player& p, endstone::Entity& t) {
-        // Real C++ execution context for axe
-        // TODO: Convert logic
+        auto loc = t.getLocation();
+        std::string coord = std::to_string(loc.getX()) + " " + std::to_string(loc.getY()) + " " + std::to_string(loc.getZ());
+        auto& server = p.getServer();
+        
+        // Shield break effects
+        server.dispatchCommand(server.getCommandSender(), "playsound random.break @a " + coord + " 1.0 0.6");
+        server.dispatchCommand(server.getCommandSender(), "particle minecraft:critical_hit_emitter " + coord);
     }
 
     void handle_battlestaff(endstone::Player& p, endstone::Entity& t) {
@@ -3600,8 +3617,10 @@ namespace WeaponsGen {
     }
 
     void handle_claymore(endstone::Player& p, endstone::Entity& t) {
-        // Real C++ execution context for claymore
-        // TODO: Convert logic
+        auto loc = t.getLocation();
+        std::string coord = std::to_string(loc.getX()) + " " + std::to_string(loc.getY()) + " " + std::to_string(loc.getZ());
+        // Heavy Knockback Sound
+        p.getServer().dispatchCommand(p.getServer().getCommandSender(), "playsound attack.sweep @a " + coord + " 1.2 0.8");
     }
 
     void handle_spongeStriker(endstone::Player& p, endstone::Entity& t) {
