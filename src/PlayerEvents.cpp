@@ -62,13 +62,19 @@ void RSNHybridPlugin::onPlayerQuit(endstone::PlayerQuitEvent& event) {
 }
 
 void RSNHybridPlugin::onActorDamage(endstone::ActorDamageEvent& event) {
-    // Get damager via DamageSource (confirmed from damage_source.h)
     auto* damager = event.getDamageSource().getActor();
     auto& target = event.getActor();
 
     if (!damager || !CombatHelper::isValidTarget(target)) return;
 
-    // Example logic hook for Dungeons weapon effects
+    auto* player = damager->asPlayer();
+    if (player) {
+        auto item = player->getInventory().getItemInMainHand();
+        if (item.has_value()) {
+            std::string weaponId = item->getType().getId();
+            WeaponsHelper::handleWeaponAttack(*player, target, weaponId);
+        }
+    }
 }
 
 void RSNHybridPlugin::onPlayerInteract(endstone::PlayerInteractEvent& event) {
@@ -80,7 +86,7 @@ void RSNHybridPlugin::onPlayerInteract(endstone::PlayerInteractEvent& event) {
     // Fetch item in main hand
     auto item = player.getInventory().getItemInMainHand();
     if (item.has_value()) {
-        std::string itemId = item->getType();
+        std::string itemId = item->getType().getId();
         ArtefactsHelper::handleArtefactUse(player, itemId);
     }
 }
