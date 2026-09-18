@@ -3578,7 +3578,7 @@ namespace WeaponsGen {
         auto loc = t.getLocation();
         std::string coord = std::to_string(loc.getX()) + " " + std::to_string(loc.getY()) + " " + std::to_string(loc.getZ());
         auto& server = p.getServer();
-        auto sender = server.getCommandSender();
+        auto& sender = server.getCommandSender();
         
         // Particles & Sounds
         server.dispatchCommand(sender, "particle dungeons:hammer_dust " + coord);

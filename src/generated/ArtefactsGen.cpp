@@ -9,7 +9,7 @@ namespace ArtefactsGen {
     void handle_blastFungus(endstone::Player& p) {
 
         auto& server = p.getServer();
-        auto sender = server.getCommandSender();
+        auto& sender = server.getCommandSender();
         server.dispatchCommand(sender, "playsound artefact.blastfungus.explode @a \"" + p.getName() + "\" 2.0 0.3");
         // Simulate shooting 5 projectiles via commands since we don't have projectile API yet
         for(int i = 0; i < 5; i++) {
@@ -24,7 +24,7 @@ namespace ArtefactsGen {
     void handle_corruptedBeacon(endstone::Player& p) {
 
         auto& server = p.getServer();
-        auto sender = server.getCommandSender();
+        auto& sender = server.getCommandSender();
         server.dispatchCommand(sender, "playsound artefact.corrupted_beacon.beam @a \"" + p.getName() + "\" 1.0 1.0");
         server.dispatchCommand(sender, "execute as \"" + p.getName() + "\" at @s run particle dungeons:corrupted_beacon_beam ^ ^1 ^5");
         server.dispatchCommand(sender, "execute as \"" + p.getName() + "\" at @s run damage @e[r=10,c=5] 12 magic entity @s");
