@@ -58,7 +58,7 @@ void RSNHybridPlugin::onPlayerQuit(endstone::PlayerQuitEvent& event) {
     // Cleanup logic if needed
 }
 
-void RSNHybridPlugin::onEntityDamageByEntity(endstone::ActorDamageByEntityEvent& event) {
+void RSNHybridPlugin::onActorDamage(endstone::ActorDamageEvent& event) {
     auto* damager = event.getDamager();
     auto& target = event.getEntity();
 

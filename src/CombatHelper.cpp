@@ -43,8 +43,8 @@ namespace CombatHelper {
             if (prop == "apply_strength") damage = applyStrength(damage, attacker);
             if (prop == "apply_weakness") damage = applyWeakness(damage, attacker);
             if (prop == "apply_melee_enchants") damage = applyMeleeEnchants(damage, attacker, target);
-            if (prop == "artefact" && attacker.isPlayer()) {
-                auto& player = static_cast<endstone::Player&>(attacker);
+            if (prop == "artefact" && attacker.asPlayer() != nullptr) {
+                auto& player = *attacker.asPlayer();
                 if (isWearingSet(player, "dungeons:piglin_armour")) damage *= 1.5f;
                 if (isWearingSet(player, "dungeons:guard_armour")) damage *= 1.2f;
                 if (isWearingSet(player, "dungeons:soulrobe_armour")) damage *= 1.3f;
@@ -60,8 +60,8 @@ namespace CombatHelper {
 
     bool isValidTarget(endstone::Actor& target) {
         if (!target.isValid()) return false;
-        if (target.isPlayer()) {
-            auto& p = static_cast<endstone::Player&>(target);
+        if (target.asPlayer() != nullptr) {
+            auto* p = target.asPlayer();
             // Ignore creative mode players
             // if (p.getGameMode() == GameMode::Creative) return false;
         }

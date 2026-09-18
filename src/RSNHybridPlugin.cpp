@@ -14,7 +14,7 @@ void RSNHybridPlugin::onEnable() {
     registerEvent(&RSNHybridPlugin::onServerLoad, *this);
     registerEvent(&RSNHybridPlugin::onPlayerJoin, *this);
     registerEvent(&RSNHybridPlugin::onPlayerQuit, *this);
-    registerEvent(&RSNHybridPlugin::onEntityDamageByEntity, *this);
+    registerEvent(&RSNHybridPlugin::onActorDamage, *this);
     registerEvent(&RSNHybridPlugin::onPlayerInteract, *this);
     registerEvent(&RSNHybridPlugin::onBlockBreak, *this);
     
