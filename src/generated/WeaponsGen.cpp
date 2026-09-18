@@ -3563,5 +3563,121 @@ namespace WeaponsGen {
     //     });
     // });
 
+    // BODIES
+    void handle_alylicleaver(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for alylicleaver
+        // TODO: Convert logic
+    }
+
+    void handle_longsword(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for longsword
+        // TODO: Convert logic
+    }
+
+    void handle_anchor(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for anchor
+        // TODO: Convert logic
+    }
+
+    void handle_axe(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for axe
+        // TODO: Convert logic
+    }
+
+    void handle_battlestaff(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for battlestaff
+        // TODO: Convert logic
+    }
+
+    void handle_boneClub(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for boneClub
+        // TODO: Convert logic
+    }
+
+    void handle_brokenSawblade(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for brokenSawblade
+        // TODO: Convert logic
+    }
+
+    void handle_claymore(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for claymore
+        // TODO: Convert logic
+    }
+
+    void handle_spongeStriker(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for spongeStriker
+        // TODO: Convert logic
+    }
+
+    void handle_cutlass(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for cutlass
+        // TODO: Convert logic
+    }
+
+    void handle_daggers(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for daggers
+        // TODO: Convert logic
+    }
+
+    void handle_gauntlets(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for gauntlets
+        // TODO: Convert logic
+    }
+
+    void handle_glaive(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for glaive
+        // TODO: Convert logic
+    }
+
+    void handle_hammer(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for hammer
+        // TODO: Convert logic
+    }
+
+    void handle_obsidianClaymore(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for obsidianClaymore
+        // TODO: Convert logic
+    }
+
+    void handle_rapier(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for rapier
+        // TODO: Convert logic
+    }
+
+    void handle_soulScythe(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for soulScythe
+        // TODO: Convert logic
+    }
+
+    void handle_whip(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for whip
+        // TODO: Convert logic
+    }
+
+    void handle_voidBlades(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for voidBlades
+        // TODO: Convert logic
+    }
+
+    void handle_rushSpear(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for rushSpear
+        // TODO: Convert logic
+    }
+
+    void handle_mace(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for mace
+        // TODO: Convert logic
+    }
+
+    void handle_sickles(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for sickles
+        // TODO: Convert logic
+    }
+
+    void handle_alylicleaver(endstone::Player& p, endstone::Entity& t) {
+        // Real C++ execution context for alylicleaver
+        // TODO: Convert logic
+    }
+
     void init() {}
 }
