@@ -28,6 +28,6 @@ namespace WeaponsGen {
     void handle_rushSpear(endstone::Player& p, endstone::Entity& t);
     void handle_mace(endstone::Player& p, endstone::Entity& t);
     void handle_sickles(endstone::Player& p, endstone::Entity& t);
-    void handle_alylicleaver(endstone::Player& p, endstone::Entity& t);
+
 
 }

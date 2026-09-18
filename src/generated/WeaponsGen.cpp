@@ -3693,10 +3693,7 @@ namespace WeaponsGen {
         // TODO: Convert logic
     }
 
-    void handle_alylicleaver(endstone::Player& p, endstone::Entity& t) {
-        // Real C++ execution context for alylicleaver
-        // TODO: Convert logic
-    }
+
 
     void init() {}
 }
