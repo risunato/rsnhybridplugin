@@ -3564,17 +3564,17 @@ namespace WeaponsGen {
     // });
 
     // BODIES
-    void handle_alylicleaver(endstone::Player& p, endstone::Entity& t) {
+    void handle_alylicleaver(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for alylicleaver
         // TODO: Convert logic
     }
 
-    void handle_longsword(endstone::Player& p, endstone::Entity& t) {
+    void handle_longsword(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for longsword
         // TODO: Convert logic
     }
 
-    void handle_anchor(endstone::Player& p, endstone::Entity& t) {
+    void handle_anchor(endstone::Player& p, endstone::Actor& t) {
         auto loc = t.getLocation();
         std::string coord = std::to_string(loc.getX()) + " " + std::to_string(loc.getY()) + " " + std::to_string(loc.getZ());
         auto& server = p.getServer();
@@ -3591,7 +3591,7 @@ namespace WeaponsGen {
         server.dispatchCommand(sender, "execute positioned " + coord + " as @e[r=4,family=!gravity_immune] run tp @s " + coord);
     }
 
-    void handle_axe(endstone::Player& p, endstone::Entity& t) {
+    void handle_axe(endstone::Player& p, endstone::Actor& t) {
         auto loc = t.getLocation();
         std::string coord = std::to_string(loc.getX()) + " " + std::to_string(loc.getY()) + " " + std::to_string(loc.getZ());
         auto& server = p.getServer();
@@ -3601,94 +3601,94 @@ namespace WeaponsGen {
         server.dispatchCommand(server.getCommandSender(), "particle minecraft:critical_hit_emitter " + coord);
     }
 
-    void handle_battlestaff(endstone::Player& p, endstone::Entity& t) {
+    void handle_battlestaff(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for battlestaff
         // TODO: Convert logic
     }
 
-    void handle_boneClub(endstone::Player& p, endstone::Entity& t) {
+    void handle_boneClub(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for boneClub
         // TODO: Convert logic
     }
 
-    void handle_brokenSawblade(endstone::Player& p, endstone::Entity& t) {
+    void handle_brokenSawblade(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for brokenSawblade
         // TODO: Convert logic
     }
 
-    void handle_claymore(endstone::Player& p, endstone::Entity& t) {
+    void handle_claymore(endstone::Player& p, endstone::Actor& t) {
         auto loc = t.getLocation();
         std::string coord = std::to_string(loc.getX()) + " " + std::to_string(loc.getY()) + " " + std::to_string(loc.getZ());
         // Heavy Knockback Sound
         p.getServer().dispatchCommand(p.getServer().getCommandSender(), "playsound attack.sweep @a " + coord + " 1.2 0.8");
     }
 
-    void handle_spongeStriker(endstone::Player& p, endstone::Entity& t) {
+    void handle_spongeStriker(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for spongeStriker
         // TODO: Convert logic
     }
 
-    void handle_cutlass(endstone::Player& p, endstone::Entity& t) {
+    void handle_cutlass(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for cutlass
         // TODO: Convert logic
     }
 
-    void handle_daggers(endstone::Player& p, endstone::Entity& t) {
+    void handle_daggers(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for daggers
         // TODO: Convert logic
     }
 
-    void handle_gauntlets(endstone::Player& p, endstone::Entity& t) {
+    void handle_gauntlets(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for gauntlets
         // TODO: Convert logic
     }
 
-    void handle_glaive(endstone::Player& p, endstone::Entity& t) {
+    void handle_glaive(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for glaive
         // TODO: Convert logic
     }
 
-    void handle_hammer(endstone::Player& p, endstone::Entity& t) {
+    void handle_hammer(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for hammer
         // TODO: Convert logic
     }
 
-    void handle_obsidianClaymore(endstone::Player& p, endstone::Entity& t) {
+    void handle_obsidianClaymore(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for obsidianClaymore
         // TODO: Convert logic
     }
 
-    void handle_rapier(endstone::Player& p, endstone::Entity& t) {
+    void handle_rapier(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for rapier
         // TODO: Convert logic
     }
 
-    void handle_soulScythe(endstone::Player& p, endstone::Entity& t) {
+    void handle_soulScythe(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for soulScythe
         // TODO: Convert logic
     }
 
-    void handle_whip(endstone::Player& p, endstone::Entity& t) {
+    void handle_whip(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for whip
         // TODO: Convert logic
     }
 
-    void handle_voidBlades(endstone::Player& p, endstone::Entity& t) {
+    void handle_voidBlades(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for voidBlades
         // TODO: Convert logic
     }
 
-    void handle_rushSpear(endstone::Player& p, endstone::Entity& t) {
+    void handle_rushSpear(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for rushSpear
         // TODO: Convert logic
     }
 
-    void handle_mace(endstone::Player& p, endstone::Entity& t) {
+    void handle_mace(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for mace
         // TODO: Convert logic
     }
 
-    void handle_sickles(endstone::Player& p, endstone::Entity& t) {
+    void handle_sickles(endstone::Player& p, endstone::Actor& t) {
         // Real C++ execution context for sickles
         // TODO: Convert logic
     }

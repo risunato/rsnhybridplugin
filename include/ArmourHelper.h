@@ -1,7 +1,7 @@
 #pragma once
 
 #include <endstone/player.h>
-#include <endstone/entity/entity.h>
+#include <endstone/actor/actor.h>
 #include <string>
 
 namespace ArmourHelper {

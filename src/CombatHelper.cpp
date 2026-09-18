@@ -9,7 +9,7 @@ namespace CombatHelper {
         return false; 
     }
 
-    float applyWeakness(float damageValue, endstone::Entity& attacker) {
+    float applyWeakness(float damageValue, endstone::Actor& attacker) {
         // Asumsi API Endstone mendukung pengecekan efek (misal: weakness)
         // int weaknessLevel = attacker.getEffectLevel("weakness"); // Placeholder API
         int weaknessLevel = 0; // Ganti dengan API pemanggilan level efek asli nanti
@@ -20,7 +20,7 @@ namespace CombatHelper {
         return damageValue;
     }
 
-    float applyStrength(float damageValue, endstone::Entity& attacker) {
+    float applyStrength(float damageValue, endstone::Actor& attacker) {
         // Asumsi API Endstone mendukung pengecekan efek (misal: strength)
         // int strengthLevel = attacker.getEffectLevel("strength"); // Placeholder API
         int strengthLevel = 0; // Ganti dengan API pemanggilan level efek asli nanti
@@ -31,12 +31,12 @@ namespace CombatHelper {
         return damageValue;
     }
 
-    float applyMeleeEnchants(float damageValue, endstone::Entity& attacker, endstone::Entity& target) {
+    float applyMeleeEnchants(float damageValue, endstone::Actor& attacker, endstone::Actor& target) {
         // Placeholder logic
         return damageValue;
     }
 
-    bool specialDamage(endstone::Entity& attacker, endstone::Entity& target, float damage, 
+    bool specialDamage(endstone::Actor& attacker, endstone::Actor& target, float damage, 
                        const std::string& cause, const std::vector<std::string>& properties) {
         
         for (const auto& prop : properties) {
@@ -58,7 +58,7 @@ namespace CombatHelper {
         return true;
     }
 
-    bool isValidTarget(endstone::Entity& target) {
+    bool isValidTarget(endstone::Actor& target) {
         if (!target.isValid()) return false;
         if (target.isPlayer()) {
             auto& p = static_cast<endstone::Player&>(target);

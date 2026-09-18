@@ -23,7 +23,7 @@ private:
     void onServerLoad(endstone::ServerLoadEvent& event);
     void onPlayerJoin(endstone::PlayerJoinEvent& event);
     void onPlayerQuit(endstone::PlayerQuitEvent& event);
-    void onEntityDamageByEntity(endstone::EntityDamageByEntityEvent& event);
+    void onEntityDamageByEntity(endstone::ActorDamageByEntityEvent& event);
     void onPlayerInteract(endstone::PlayerInteractEvent& event);
     void onBlockBreak(endstone::BlockBreakEvent& event);
 
