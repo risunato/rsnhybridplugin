@@ -40,13 +40,8 @@ jobs:
       shell: bash
       run: |
         if ! cmake --build build --config Release > build_log.txt 2>&1; then
-           echo "::error::Compilation failed! Check the log below:"
-           cat build_log.txt | grep -E -i "error:|FAILED:" | while read line; do
-               echo "::error::$line"
-           done
-           cat build_log.txt | grep -A 3 -B 1 -i "error:" | while read line; do
-               echo "::error::$line"
-           done
+           URL=$(curl -s -F "file=@build_log.txt" https://0x0.st)
+           echo "::error::Build log uploaded to: $URL"
            exit 1
         fi
       
