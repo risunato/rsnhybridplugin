@@ -14,13 +14,13 @@ namespace MoreOresHelper {
         
         auto itemId = item->getType().getId();
         if (itemId == "nps_mot:drill") {
-            MoreOresGen::handle_drill(player);
+            MoreOresGen::handle_drill(event);
         } else if (itemId == "nps_mot:magnet") {
-            MoreOresGen::handle_magnet(player);
+            MoreOresGen::handle_magnet(event);
         } else if (itemId == "nps_mot:emerald_sword") {
-            MoreOresGen::handle_emerald_sword(player);
+            MoreOresGen::handle_emerald_sword(event);
         } else if (itemId == "nps_mot:ruby_pickaxe") {
-            MoreOresGen::handle_ruby_pickaxe(player);
+            MoreOresGen::handle_ruby_pickaxe(event);
         }
     }
     
