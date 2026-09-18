@@ -21,15 +21,13 @@ jobs:
       with:
         python-version: '3.12'
         
-    - name: Install Endstone
+    - name: Install Endstone (Python tests)
       run: |
         python -m pip install --upgrade pip
         pip install endstone
         
     - name: Configure CMake
-      run: |
-        python -c "import endstone, os, subprocess, sys; dir=os.path.dirname(endstone.__file__); cmd=['cmake', '-B', 'build', '-S', '.', '-DCMAKE_BUILD_TYPE=Release', f'-DCMAKE_PREFIX_PATH={dir}']; print('Running:', ' '.join(cmd)); sys.exit(subprocess.call(cmd))"
-
+      run: cmake -B build -S . -DCMAKE_BUILD_TYPE=Release
       
     - name: Build Plugin
       run: cmake --build build --config Release

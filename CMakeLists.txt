@@ -5,10 +5,14 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-find_package(endstone REQUIRED)
+include(FetchContent)
+FetchContent_Declare(
+    endstone
+    GIT_REPOSITORY https://github.com/EndstoneMC/endstone.git
+    GIT_TAG main
+)
+FetchContent_MakeAvailable(endstone)
 
 file(GLOB_RECURSE SRC_FILES "src/*.cpp")
-add_library(rsnhybridplugin MODULE ${SRC_FILES})
+endstone_add_plugin(rsnhybridplugin ${SRC_FILES})
 target_include_directories(rsnhybridplugin PRIVATE include)
-target_link_libraries(rsnhybridplugin PRIVATE endstone::core)
-set_target_properties(rsnhybridplugin PROPERTIES PREFIX "")
