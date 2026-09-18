@@ -3,6 +3,8 @@
 #include <endstone/actor/actor.h>
 #include <endstone/server.h>
 #include <cmath>
+#include <string>
+#include <cstdlib>
 
 namespace ArtefactsGen {
     void init();
