@@ -9,7 +9,7 @@ namespace MoreOresHelper {
     
     void onPlayerInteract(endstone::PlayerInteractEvent& event) {
         auto& player = event.getPlayer();
-        auto item = player.getInventory().getItemInHand();
+        auto item = player.getInventory().getItemInMainHand();
         if (!item) return;
         
         auto itemId = item->getType().getId();

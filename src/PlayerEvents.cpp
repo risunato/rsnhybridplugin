@@ -69,7 +69,7 @@ void RSNHybridPlugin::onActorDamage(endstone::ActorDamageEvent& event) {
 
     auto* player = damager->asPlayer();
     if (player) {
-        auto item = player->getInventory().getItemInHand();
+        auto item = player->getInventory().getItemInMainHand();
         if (item) {
             std::string weaponId = item->getType().getId();
             WeaponsHelper::handleWeaponAttack(*player, target, weaponId);
@@ -84,7 +84,7 @@ void RSNHybridPlugin::onPlayerInteract(endstone::PlayerInteractEvent& event) {
     MoreOresHelper::onPlayerInteract(event);
 
     // Fetch item in main hand
-    auto item = player.getInventory().getItemInHand();
+    auto item = player.getInventory().getItemInMainHand();
     if (item) {
         std::string itemId = item->getType().getId();
         ArtefactsHelper::handleArtefactUse(player, itemId);
