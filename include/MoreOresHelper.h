@@ -7,7 +7,6 @@
 namespace MoreOresHelper {
     void onPlayerInteract(endstone::PlayerInteractEvent& event);
     void onBlockBreak(endstone::BlockBreakEvent& event);
-    void onBlockPlace(endstone::BlockPlaceEvent& event);
 
     // Custom tool effects
     void applyDrillEffect(endstone::Player& player);

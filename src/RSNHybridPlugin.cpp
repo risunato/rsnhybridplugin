@@ -24,7 +24,6 @@ void RSNHybridPlugin::onEnable() {
     registerEvent(&RSNHybridPlugin::onActorDeath, *this);
     registerEvent(&RSNHybridPlugin::onPlayerInteract, *this);
     registerEvent(&RSNHybridPlugin::onBlockBreak, *this);
-    registerEvent(&RSNHybridPlugin::onBlockPlace, *this);
     
     // Setup Scoreboards directly if server is already loaded, otherwise handled in onServerLoad
     setupScoreboards();
@@ -66,10 +65,6 @@ void RSNHybridPlugin::onServerLoad(endstone::ServerLoadEvent& event) {
 
 void RSNHybridPlugin::onBlockBreak(endstone::BlockBreakEvent& event) {
     MoreOresHelper::onBlockBreak(event);
-}
-
-void RSNHybridPlugin::onBlockPlace(endstone::BlockPlaceEvent& event) {
-    MoreOresHelper::onBlockPlace(event);
 }
 
 ENDSTONE_PLUGIN("rsnhybridplugin", "1.0.0", RSNHybridPlugin)

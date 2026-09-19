@@ -24,18 +24,6 @@ namespace MoreOresHelper {
         }
     }
     
-    void onBlockPlace(endstone::BlockPlaceEvent& event) {
-        auto& p = event.getPlayer();
-        auto* block = event.getBlock();
-        if (!p.isValid() || !block) return;
-        
-        // VanillaSystems.js ports:
-        std::string type = block->getType();
-        if (type == "nps_mot:step") {
-            // Placeholder: update step block depth
-        }
-    }
-    
     void applyDrillEffect(endstone::Player& player) {}
     void applyMagnetEffect(endstone::Player& player) {}
     void handleOreGeneration(endstone::BlockBreakEvent& event) {}
