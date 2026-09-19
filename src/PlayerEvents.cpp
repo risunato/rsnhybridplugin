@@ -96,6 +96,48 @@ void RSNHybridPlugin::onActorDamage(endstone::ActorDamageEvent& event) {
     }
 }
 
+void RSNHybridPlugin::onActorDeath(endstone::ActorDeathEvent& event) {
+    auto& target = event.getActor();
+    auto* damager = event.getDamageSource().getDamagingActor();
+    auto* player = (damager && damager->asPlayer()) ? damager->asPlayer() : nullptr;
+    
+    // GlobalData.js ports: Monsters killed, total deaths, players killed, kill streaks
+    if (target.asPlayer()) {
+        auto& victim = *target.asPlayer();
+        auto scoreboard = getServer().getScoreboard();
+        if (scoreboard) {
+            auto total_deaths = scoreboard->getObjective("MOT_TOTAL_DEATHS");
+            if (!total_deaths) total_deaths = scoreboard->addObjective("MOT_TOTAL_DEATHS", endstone::Criteria::Type::Dummy, "Total Deaths");
+            auto score = total_deaths->getScore(&victim);
+            score->setValue(score->getValue() + 1);
+
+            if (player) {
+                // Killed by player
+                auto players_killed = scoreboard->getObjective("MOT_PLAYERS_KILLED");
+                if (!players_killed) players_killed = scoreboard->addObjective("MOT_PLAYERS_KILLED", endstone::Criteria::Type::Dummy, "Players Killed");
+                auto pk_score = players_killed->getScore(player);
+                pk_score->setValue(pk_score->getValue() + 1);
+                
+                // Kill streak logic
+                auto kill_streak = scoreboard->getObjective("MOT_KILL_STREAK");
+                if (!kill_streak) kill_streak = scoreboard->addObjective("MOT_KILL_STREAK", endstone::Criteria::Type::Dummy, "Kill Streak");
+                kill_streak->getScore(&victim)->setValue(0);
+                auto ks_score = kill_streak->getScore(player);
+                ks_score->setValue(ks_score->getValue() + 1);
+            }
+        }
+    } else if (player) {
+        // Monster killed by player
+        auto scoreboard = getServer().getScoreboard();
+        if (scoreboard) {
+            auto monsters_killed = scoreboard->getObjective("MOT_MONSTERS_KILLED");
+            if (!monsters_killed) monsters_killed = scoreboard->addObjective("MOT_MONSTERS_KILLED", endstone::Criteria::Type::Dummy, "Monsters Killed");
+            auto score = monsters_killed->getScore(player);
+            score->setValue(score->getValue() + 1);
+        }
+    }
+}
+
 void RSNHybridPlugin::onPlayerInteract(endstone::PlayerInteractEvent& event) {
     auto& player = event.getPlayer();
     

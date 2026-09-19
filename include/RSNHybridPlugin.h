@@ -5,6 +5,7 @@
 #include <endstone/event/player/player_join_event.h>
 #include <endstone/event/player/player_quit_event.h>
 #include <endstone/event/actor/actor_damage_event.h>
+#include <endstone/event/actor/actor_death_event.h>
 #include <endstone/event/player/player_interact_event.h>
 #include <endstone/event/block/block_break_event.h>
 
@@ -24,6 +25,7 @@ private:
     void onPlayerJoin(endstone::PlayerJoinEvent& event);
     void onPlayerQuit(endstone::PlayerQuitEvent& event);
     void onActorDamage(endstone::ActorDamageEvent& event);
+    void onActorDeath(endstone::ActorDeathEvent& event);
     void onPlayerInteract(endstone::PlayerInteractEvent& event);
     void onBlockBreak(endstone::BlockBreakEvent& event);
 
