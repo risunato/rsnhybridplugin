@@ -1,6 +1,8 @@
 #pragma once
 
 #include <endstone/plugin/plugin.h>
+#include <endstone/command/console_command_sender.h>
+#include <endstone/command/command_sender.h>
 #include <endstone/actor/actor.h>
 #include <endstone/player.h>
 #include <endstone/server.h>
@@ -50,7 +52,7 @@ namespace HybridEngine {
         
         char buffer[256];
         snprintf(buffer, sizeof(buffer), "execute as @e[x=~,y=~,z=~,c=1,r=2] at @s facing %f %f %f run tp @s ^ ^ ^0.3", pullLoc.x, pullLoc.y, pullLoc.z);
-        server.dispatchCommand(server.getCommandSender(), buffer);
+        (void)server.dispatchCommand(server.getCommandSender(), buffer);
     }
 
     // Special Damage applying with absolute pointer validity checks
@@ -67,7 +69,7 @@ namespace HybridEngine {
         } else {
             snprintf(buffer, sizeof(buffer), "damage @e[x=~,y=~,z=~,c=1,r=2] %d %s", (int)damage, cause.c_str());
         }
-        server.dispatchCommand(server.getCommandSender(), buffer);
+        (void)server.dispatchCommand(server.getCommandSender(), buffer);
     }
     
 }
