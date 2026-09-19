@@ -1,8 +1,6 @@
 #pragma once
 
 #include <endstone/plugin/plugin.h>
-#include <endstone/event/player/player_interact_event.h>
-#include <endstone/event/entity/entity_damage_by_entity_event.h>
 #include <endstone/actor/actor.h>
 #include <endstone/player.h>
 #include <endstone/server.h>

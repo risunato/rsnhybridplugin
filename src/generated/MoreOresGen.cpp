@@ -1,4 +1,5 @@
 #include "generated/MoreOresGen.h"
+#include "HybridEngine.h"
 #include <string>
 
 namespace MoreOresGen {
