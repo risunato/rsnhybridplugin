@@ -31,7 +31,7 @@ namespace MiscHelper {
         form.setTitle("dungeons.boh.title." + itemId);
         form.setContent("dungeons.boh.body." + itemId);
         form.addButton("dungeons.boh.close");
-        form.setOnSubmit([](endstone::Player& p, int sel) {});
+        form.setOnSubmit([](endstone::Player* p, int sel) {});
         player.sendForm(form);
     }
     
@@ -55,9 +55,9 @@ namespace MiscHelper {
             }
         }
         
-        form.setOnSubmit([buttons](endstone::Player& p, int selection) {
-            if (selection >= 0 && selection < buttons.size()) {
-                showItemPage(p, buttons[selection]);
+        form.setOnSubmit([buttons](endstone::Player* p, int selection) {
+            if (p && selection >= 0 && selection < buttons.size()) {
+                showItemPage(*p, buttons[selection]);
             }
         });
         player.sendForm(form);
@@ -85,9 +85,9 @@ namespace MiscHelper {
             }
         }
         
-        form.setOnSubmit([buttons, type](endstone::Player& p, int selection) {
-            if (selection >= 0 && selection < buttons.size()) {
-                showCategory(p, buttons[selection], type);
+        form.setOnSubmit([buttons, type](endstone::Player* p, int selection) {
+            if (p && selection >= 0 && selection < buttons.size()) {
+                showCategory(*p, buttons[selection], type);
             }
         });
         player.sendForm(form);
@@ -103,19 +103,21 @@ namespace MiscHelper {
         form.addButton("Armour", "textures/ui/form/armor");
         form.addButton("Artefacts", "textures/ui/form/artefact");
         
-        form.setOnSubmit([](endstone::Player& p, int selection) {
-            if (selection == 0) showTypesPage(p, "melee");
-            else if (selection == 1) showTypesPage(p, "ranged");
-            else if (selection == 2) showTypesPage(p, "armour");
-            else if (selection == 3) showTypesPage(p, "artefact");
+        form.setOnSubmit([](endstone::Player* p, int selection) {
+            if (!p) return;
+            if (selection == 0) showTypesPage(*p, "melee");
+            else if (selection == 1) showTypesPage(*p, "ranged");
+            else if (selection == 2) showTypesPage(*p, "armour");
+            else if (selection == 3) showTypesPage(*p, "artefact");
         });
         player.sendForm(form);
     }
     
     void handleSparklerLoot(endstone::Player& player, endstone::Actor& chest) {
         auto& server = player.getServer();
-        (void)server.dispatchCommand(server.getCommandSender(), "particle dungeons:firework_arrow " + std::to_string(chest.getLocation().getX()) + " " + std::to_string(chest.getLocation().getY()) + " " + std::to_string(chest.getLocation().getZ()));
-        (void)server.dispatchCommand(server.getCommandSender(), "playsound firework.launch @a " + std::to_string(chest.getLocation().getX()) + " " + std::to_string(chest.getLocation().getY()) + " " + std::to_string(chest.getLocation().getZ()));
-        (void)server.dispatchCommand(server.getCommandSender(), "loot spawn " + std::to_string(chest.getLocation().getX()) + " " + std::to_string(chest.getLocation().getY()+1) + " " + std::to_string(chest.getLocation().getZ()) + " loot \"dungeons:sparkler\"");
+        auto sender = server.getCommandSender();
+        (void)server.dispatchCommand(sender, "particle dungeons:firework_arrow " + std::to_string(chest.getLocation().getX()) + " " + std::to_string(chest.getLocation().getY()) + " " + std::to_string(chest.getLocation().getZ()));
+        (void)server.dispatchCommand(sender, "playsound firework.launch @a " + std::to_string(chest.getLocation().getX()) + " " + std::to_string(chest.getLocation().getY()) + " " + std::to_string(chest.getLocation().getZ()));
+        (void)server.dispatchCommand(sender, "loot spawn " + std::to_string(chest.getLocation().getX()) + " " + std::to_string(chest.getLocation().getY()+1) + " " + std::to_string(chest.getLocation().getZ()) + " loot \"dungeons:sparkler\"");
     }
 }
