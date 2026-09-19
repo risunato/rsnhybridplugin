@@ -109,6 +109,7 @@ void RSNHybridPlugin::onPlayerInteract(endstone::PlayerInteractEvent& event) {
         getLogger().info(player.getName() + " interacted with: " + itemId);
         
         if (itemId == "nps_mot:codex" || itemId == "nps_mot:tutorial_book") {
+            event.setCancelled(true);
             MiscHelper::handleCodex(player);
         } else {
             ArtefactsHelper::handleArtefactUse(player, itemId);
