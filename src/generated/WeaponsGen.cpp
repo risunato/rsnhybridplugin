@@ -293,9 +293,7 @@ namespace WeaponsGen {
     }
 
     void handle_anchor(endstone::Player& p, endstone::Actor& t) {
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_specialDamage(p, t);
-        }
+        // No effects bound
     }
 
     void handle_axe(endstone::Player& p, endstone::Actor& t) {
@@ -303,15 +301,7 @@ namespace WeaponsGen {
     }
 
     void handle_battlestaff(endstone::Player& p, endstone::Actor& t) {
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_setScore(p, t);
-        }
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_setScore(p, t);
-        }
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_specialDamage(p, t);
-        }
+        // No effects bound
     }
 
     void handle_boneClub(endstone::Player& p, endstone::Actor& t) {
@@ -331,36 +321,11 @@ namespace WeaponsGen {
     }
 
     void handle_daggers(endstone::Player& p, endstone::Actor& t) {
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_setScore(p, t);
-        }
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_specialDamage(p, t);
-        }
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_specialDamage(p, t);
-        }
+        // No effects bound
     }
 
     void handle_gauntlets(endstone::Player& p, endstone::Actor& t) {
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_setScore(p, t);
-        }
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_specialDamage(p, t);
-        }
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_specialDamage(p, t);
-        }
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_setScore(p, t);
-        }
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_specialDamage(p, t);
-        }
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_specialDamage(p, t);
-        }
+        // No effects bound
     }
 
     void handle_glaive(endstone::Player& p, endstone::Actor& t) {
@@ -368,9 +333,7 @@ namespace WeaponsGen {
     }
 
     void handle_hammer(endstone::Player& p, endstone::Actor& t) {
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_specialDamage(p, t);
-        }
+        // No effects bound
     }
 
     void handle_longsword(endstone::Player& p, endstone::Actor& t) {
@@ -382,21 +345,11 @@ namespace WeaponsGen {
     }
 
     void handle_obsidianClaymore(endstone::Player& p, endstone::Actor& t) {
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_specialDamage(p, t);
-        }
+        // No effects bound
     }
 
     void handle_rapier(endstone::Player& p, endstone::Actor& t) {
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_setScore(p, t);
-        }
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_setScore(p, t);
-        }
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_specialDamage(p, t);
-        }
+        // No effects bound
     }
 
     void handle_rushSpear(endstone::Player& p, endstone::Actor& t) {
@@ -404,15 +357,7 @@ namespace WeaponsGen {
     }
 
     void handle_sickles(endstone::Player& p, endstone::Actor& t) {
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_setScore(p, t);
-        }
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_specialDamage(p, t);
-        }
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_specialDamage(p, t);
-        }
+        // No effects bound
     }
 
     void handle_soulScythe(endstone::Player& p, endstone::Actor& t) {
@@ -424,15 +369,7 @@ namespace WeaponsGen {
     }
 
     void handle_voidBlades(endstone::Player& p, endstone::Actor& t) {
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_setScore(p, t);
-        }
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_specialDamage(p, t);
-        }
-        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
-            trigger_specialDamage(p, t);
-        }
+        // No effects bound
     }
 
     void handle_whip(endstone::Player& p, endstone::Actor& t) {
