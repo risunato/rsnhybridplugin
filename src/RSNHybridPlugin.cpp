@@ -2,6 +2,8 @@
 #include "MoreOresHelper.h"
 #include "DataStore.h"
 #include <endstone/server.h>
+#include <endstone/scheduler/scheduler.h>
+#include <endstone/command/console_command_sender.h>
 #include <endstone/scoreboard/scoreboard.h>
 
 void RSNHybridPlugin::onLoad() {
