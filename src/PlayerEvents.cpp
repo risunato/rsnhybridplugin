@@ -64,13 +64,24 @@ void RSNHybridPlugin::onPlayerQuit(endstone::PlayerQuitEvent& event) {
 }
 
 void RSNHybridPlugin::onActorDamage(endstone::ActorDamageEvent& event) {
-    auto* damager = event.getDamageSource().getActor();
+    auto* damager = event.getDamageSource().getActor(); // Direct cause (e.g. arrow, sword)
+    auto* indirectDamager = event.getDamageSource().getDamagingActor(); // Shooter/Owner
     auto& target = event.getActor();
 
-    if (!damager || !CombatHelper::isValidTarget(target)) return;
+    if (!CombatHelper::isValidTarget(target)) return;
+    
+    endstone::Player* player = nullptr;
+    if (damager && damager->asPlayer()) {
+        player = damager->asPlayer();
+    } else if (indirectDamager && indirectDamager->asPlayer()) {
+        player = indirectDamager->asPlayer();
+    }
+    
+    if (damager) getLogger().info("Actor " + target.getName() + " damaged by direct: " + damager->getType());
+    if (indirectDamager) getLogger().info("Actor " + target.getName() + " damaged by indirect: " + indirectDamager->getType());
 
-    auto* player = damager->asPlayer();
     if (player) {
+        getLogger().info(player->getName() + " damaged actor: " + target.getName());
         // Handle Diamond Chest Loot
         if (target.getName() == "dungeons:diamond_chest" || target.getName() == "diamond_chest") {
             MiscHelper::handleSparklerLoot(*player, target);
@@ -95,7 +106,9 @@ void RSNHybridPlugin::onPlayerInteract(endstone::PlayerInteractEvent& event) {
     auto item = player.getInventory().getItemInMainHand();
     if (item) {
         std::string itemId = item->getType().getId();
-        if (itemId == "dungeons:the_book_of_heroes" || itemId == "dungeons:tutorial_book") {
+        getLogger().info(player.getName() + " interacted with: " + itemId);
+        
+        if (itemId == "dungeons:book_of_heroes" || itemId == "dungeons:tutorial_book") {
             MiscHelper::handleCodex(player);
         } else {
             ArtefactsHelper::handleArtefactUse(player, itemId);
