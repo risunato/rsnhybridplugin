@@ -8,6 +8,7 @@
 #include <endstone/event/actor/actor_death_event.h>
 #include <endstone/event/player/player_interact_event.h>
 #include <endstone/event/block/block_break_event.h>
+#include <endstone/event/block/block_place_event.h>
 
 
 class RSNHybridPlugin : public endstone::Plugin {
@@ -28,6 +29,7 @@ private:
     void onActorDeath(endstone::ActorDeathEvent& event);
     void onPlayerInteract(endstone::PlayerInteractEvent& event);
     void onBlockBreak(endstone::BlockBreakEvent& event);
+    void onBlockPlace(endstone::BlockPlaceEvent& event);
 
     // Helpers
     void clearPlayerWarningTags(endstone::Player& player);
