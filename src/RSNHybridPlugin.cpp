@@ -28,10 +28,7 @@ void RSNHybridPlugin::onEnable() {
     // Setup Scoreboards directly if server is already loaded, otherwise handled in onServerLoad
     setupScoreboards();
 
-    // Schedule Haunted Bow Trail
-    getServer().getScheduler().runTaskTimer(*this, [this]() {
-        (void)getServer().dispatchCommand(getServer().getCommandSender(), "execute as @e[tag=dungeons:haunted_bow_fired_by] at @s run particle dungeons:haunted_arrow ~ ~ ~");
-    }, 1, 1);
+    // Haunted Bow Trail is moved to JS to prevent ConsoleCommandSender spam
 }
 
 void RSNHybridPlugin::onDisable() {
