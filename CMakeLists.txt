@@ -13,6 +13,14 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(endstone)
 
+FetchContent_Declare(
+    json
+    GIT_REPOSITORY https://github.com/nlohmann/json.git
+    GIT_TAG v3.11.2
+)
+FetchContent_MakeAvailable(json)
+
 file(GLOB_RECURSE SRC_FILES "src/*.cpp")
 endstone_add_plugin(rsnhybridplugin ${SRC_FILES})
 target_include_directories(rsnhybridplugin PRIVATE include)
+target_link_libraries(rsnhybridplugin PRIVATE nlohmann_json::nlohmann_json)

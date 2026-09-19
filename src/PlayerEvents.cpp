@@ -111,6 +111,12 @@ void RSNHybridPlugin::onPlayerInteract(endstone::PlayerInteractEvent& event) {
         if (itemId == "nps_mot:codex" || itemId == "nps_mot:tutorial_book") {
             event.setCancelled(true);
             MiscHelper::handleCodex(player);
+        } else if (itemId == "nps_mot:server_tool") {
+            event.setCancelled(true);
+            MiscHelper::handleServerTool(player);
+        } else if (itemId == "nps_mot:settings_tool") {
+            event.setCancelled(true);
+            MiscHelper::handleSettingsTool(player);
         } else {
             ArtefactsHelper::handleArtefactUse(player, itemId);
         }

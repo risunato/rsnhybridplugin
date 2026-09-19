@@ -3,6 +3,7 @@
 #include <endstone/server.h>
 #include <endstone/command/command_sender.h>
 #include <endstone/command/console_command_sender.h>
+#include "DataStore.h"
 #include <unordered_map>
 #include <vector>
 #include <string>
@@ -121,5 +122,46 @@ namespace MiscHelper {
         (void)server.dispatchCommand(sender, "particle dungeons:firework_arrow " + std::to_string(chest.getLocation().getX()) + " " + std::to_string(chest.getLocation().getY()) + " " + std::to_string(chest.getLocation().getZ()));
         (void)server.dispatchCommand(sender, "playsound firework.launch @a " + std::to_string(chest.getLocation().getX()) + " " + std::to_string(chest.getLocation().getY()) + " " + std::to_string(chest.getLocation().getZ()));
         (void)server.dispatchCommand(sender, "loot spawn " + std::to_string(chest.getLocation().getX()) + " " + std::to_string(chest.getLocation().getY()+1) + " " + std::to_string(chest.getLocation().getZ()) + " loot \"dungeons:sparkler\"");
+    }
+    
+    void handleServerTool(endstone::Player& player) {
+        if (!player.isOp()) {
+            player.sendMessage("§cYou must be an operator to use the Server Tool.");
+            return;
+        }
+        
+        endstone::ActionForm form;
+        form.setTitle("nps_mot:server_tool.title");
+        form.setContent("nps_mot:server_tool.body");
+        form.addButton("nps_mot:server_tool.btn_macros", "textures/ui/icon_recipe_nature");
+        form.addButton("Close", "textures/ui/cancel");
+        
+        form.setOnSubmit([](endstone::Player* p, int selection) {
+            if (!p) return;
+            if (selection == 0) {
+                // Open Macros Menu
+                p->sendMessage("§aMacro System has been successfully ported! UI coming in next commit.");
+            }
+        });
+        player.sendForm(form);
+    }
+    
+    void handleSettingsTool(endstone::Player& player) {
+        endstone::ActionForm form;
+        form.setTitle("nps_mot:settings_tool.title");
+        form.setContent("Server Optimization Hub\\nConfigure hybrid features here.");
+        form.addButton("My Settings", "textures/ui/icon_gear");
+        if (player.isOp()) {
+            form.addButton("Operator Settings", "textures/ui/icon_op");
+        }
+        form.addButton("Close", "textures/ui/cancel");
+        
+        form.setOnSubmit([](endstone::Player* p, int selection) {
+            if (!p) return;
+            if (selection == 0) {
+                p->sendMessage("§aSettings System has been successfully ported! UI coming in next commit.");
+            }
+        });
+        player.sendForm(form);
     }
 }
