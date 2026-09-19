@@ -2,7 +2,9 @@
 #include "CombatHelper.h"
 #include "ArtefactsHelper.h"
 #include "WeaponsHelper.h"
+#include "RangedHelper.h"
 #include "MoreOresHelper.h"
+#include "MiscHelper.h"
 #include <endstone/player.h>
 #include <endstone/inventory/player_inventory.h>
 #include <endstone/inventory/item_stack.h>
@@ -69,10 +71,16 @@ void RSNHybridPlugin::onActorDamage(endstone::ActorDamageEvent& event) {
 
     auto* player = damager->asPlayer();
     if (player) {
+        // Handle Diamond Chest Loot
+        if (target.getName() == "dungeons:diamond_chest" || target.getName() == "diamond_chest") {
+            MiscHelper::handleSparklerLoot(*player, target);
+        }
+
         auto item = player->getInventory().getItemInMainHand();
         if (item) {
             std::string weaponId = item->getType().getId();
             WeaponsHelper::handleWeaponAttack(*player, target, weaponId);
+            RangedHelper::handleProjectileHit(*player, target, weaponId);
         }
     }
 }
@@ -87,6 +95,10 @@ void RSNHybridPlugin::onPlayerInteract(endstone::PlayerInteractEvent& event) {
     auto item = player.getInventory().getItemInMainHand();
     if (item) {
         std::string itemId = item->getType().getId();
-        ArtefactsHelper::handleArtefactUse(player, itemId);
+        if (itemId == "dungeons:the_book_of_heroes" || itemId == "dungeons:tutorial_book") {
+            MiscHelper::handleCodex(player);
+        } else {
+            ArtefactsHelper::handleArtefactUse(player, itemId);
+        }
     }
 }
