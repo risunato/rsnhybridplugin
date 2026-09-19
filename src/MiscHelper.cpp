@@ -1,6 +1,8 @@
 #include "MiscHelper.h"
 #include <endstone/form/action_form.h>
 #include <endstone/server.h>
+#include <endstone/command/command_sender.h>
+#include <endstone/command/console_command_sender.h>
 #include <unordered_map>
 #include <vector>
 #include <string>
@@ -115,7 +117,7 @@ namespace MiscHelper {
     
     void handleSparklerLoot(endstone::Player& player, endstone::Actor& chest) {
         auto& server = player.getServer();
-        auto sender = server.getCommandSender();
+        auto& sender = server.getCommandSender();
         (void)server.dispatchCommand(sender, "particle dungeons:firework_arrow " + std::to_string(chest.getLocation().getX()) + " " + std::to_string(chest.getLocation().getY()) + " " + std::to_string(chest.getLocation().getZ()));
         (void)server.dispatchCommand(sender, "playsound firework.launch @a " + std::to_string(chest.getLocation().getX()) + " " + std::to_string(chest.getLocation().getY()) + " " + std::to_string(chest.getLocation().getZ()));
         (void)server.dispatchCommand(sender, "loot spawn " + std::to_string(chest.getLocation().getX()) + " " + std::to_string(chest.getLocation().getY()+1) + " " + std::to_string(chest.getLocation().getZ()) + " loot \"dungeons:sparkler\"");
