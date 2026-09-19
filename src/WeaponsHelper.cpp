@@ -42,16 +42,16 @@ namespace WeaponsHelper {
         weaponHandlers["dungeons:battlestaff"] = [](endstone::Player& p, endstone::Actor& t) {
             WeaponsGen::handle_battlestaff(p, t);
         };
-        weaponHandlers["dungeons:boneClub"] = [](endstone::Player& p, endstone::Actor& t) {
+        weaponHandlers["dungeons:bone_club"] = [](endstone::Player& p, endstone::Actor& t) {
             WeaponsGen::handle_boneClub(p, t);
         };
-        weaponHandlers["dungeons:brokenSawblade"] = [](endstone::Player& p, endstone::Actor& t) {
+        weaponHandlers["dungeons:broken_sawblade"] = [](endstone::Player& p, endstone::Actor& t) {
             WeaponsGen::handle_brokenSawblade(p, t);
         };
         weaponHandlers["dungeons:claymore"] = [](endstone::Player& p, endstone::Actor& t) {
             WeaponsGen::handle_claymore(p, t);
         };
-        weaponHandlers["dungeons:spongeStriker"] = [](endstone::Player& p, endstone::Actor& t) {
+        weaponHandlers["dungeons:sponge_striker"] = [](endstone::Player& p, endstone::Actor& t) {
             WeaponsGen::handle_spongeStriker(p, t);
         };
         weaponHandlers["dungeons:cutlass"] = [](endstone::Player& p, endstone::Actor& t) {
@@ -69,22 +69,22 @@ namespace WeaponsHelper {
         weaponHandlers["dungeons:hammer"] = [](endstone::Player& p, endstone::Actor& t) {
             WeaponsGen::handle_hammer(p, t);
         };
-        weaponHandlers["dungeons:obsidianClaymore"] = [](endstone::Player& p, endstone::Actor& t) {
+        weaponHandlers["dungeons:obsidian_claymore"] = [](endstone::Player& p, endstone::Actor& t) {
             WeaponsGen::handle_obsidianClaymore(p, t);
         };
         weaponHandlers["dungeons:rapier"] = [](endstone::Player& p, endstone::Actor& t) {
             WeaponsGen::handle_rapier(p, t);
         };
-        weaponHandlers["dungeons:soulScythe"] = [](endstone::Player& p, endstone::Actor& t) {
+        weaponHandlers["dungeons:soul_scythe"] = [](endstone::Player& p, endstone::Actor& t) {
             WeaponsGen::handle_soulScythe(p, t);
         };
         weaponHandlers["dungeons:whip"] = [](endstone::Player& p, endstone::Actor& t) {
             WeaponsGen::handle_whip(p, t);
         };
-        weaponHandlers["dungeons:voidBlades"] = [](endstone::Player& p, endstone::Actor& t) {
+        weaponHandlers["dungeons:void_blades"] = [](endstone::Player& p, endstone::Actor& t) {
             WeaponsGen::handle_voidBlades(p, t);
         };
-        weaponHandlers["dungeons:rushSpear"] = [](endstone::Player& p, endstone::Actor& t) {
+        weaponHandlers["dungeons:rush_spear"] = [](endstone::Player& p, endstone::Actor& t) {
             WeaponsGen::handle_rushSpear(p, t);
         };
         weaponHandlers["dungeons:mace"] = [](endstone::Player& p, endstone::Actor& t) {
