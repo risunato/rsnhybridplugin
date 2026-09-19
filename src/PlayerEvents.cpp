@@ -108,7 +108,7 @@ void RSNHybridPlugin::onPlayerInteract(endstone::PlayerInteractEvent& event) {
         std::string itemId = item->getType().getId();
         getLogger().info(player.getName() + " interacted with: " + itemId);
         
-        if (itemId == "dungeons:book_of_heroes" || itemId == "dungeons:tutorial_book") {
+        if (itemId == "nps_mot:codex" || itemId == "nps_mot:tutorial_book") {
             MiscHelper::handleCodex(player);
         } else {
             ArtefactsHelper::handleArtefactUse(player, itemId);
