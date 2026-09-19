@@ -15,10 +15,10 @@ namespace MoreOresGen {
             std::string fillCmd = "execute as \"" + p.getName() + "\" at @s run fill " + 
                                   std::to_string(x - 1) + " " + std::to_string(y - 1) + " " + std::to_string(z - 1) + " " + 
                                   std::to_string(x + 1) + " " + std::to_string(y + 1) + " " + std::to_string(z + 1) + " air [] destroy";
-            server.dispatchCommand(server.getCommandSender(), fillCmd);
+            server.dispatchCommand(p, fillCmd);
             
             // Play a digging sound instead of anvil
-            server.dispatchCommand(server.getCommandSender(), "execute as \"" + p.getName() + "\" at @s run playsound dig.stone @a ~ ~ ~ 1.0 1.0");
+            server.dispatchCommand(p, "execute as \"" + p.getName() + "\" at @s run playsound dig.stone @a ~ ~ ~ 1.0 1.0");
         }
     }
 
@@ -26,7 +26,7 @@ namespace MoreOresGen {
         auto& p = event.getPlayer();
         auto& server = p.getServer();
         server.dispatchCommand(p, "execute as \"" + p.getName() + "\" at @s run tp @e[type=item,r=5] @s");
-        server.dispatchCommand(server.getCommandSender(), "execute as \"" + p.getName() + "\" at @s run playsound random.orb @a ~ ~ ~ 1.0 1.0");
+        server.dispatchCommand(p, "execute as \"" + p.getName() + "\" at @s run playsound random.orb @a ~ ~ ~ 1.0 1.0");
     }
 
     void handle_emerald_sword(endstone::PlayerInteractEvent& event) {

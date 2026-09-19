@@ -178,55 +178,55 @@ namespace WeaponsGen {
 
     void handle_longsword(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_sharpened(p, t);
         }
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_criticalHit(p, t);
         }
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_criticalHitSpooky(p, t);
         }
     }
 
     void handle_anchor(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_poison(p, t);
         }
     }
 
     void handle_axe(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_fireAspect(p, t);
         }
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_stunning(p, t);
         }
     }
 
     void handle_backstabber(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_ambush(p, t);
         }
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_echo(p, t);
         }
     }
 
     void handle_battlestaff(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_exploding(p, t);
         }
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_committed(p, t);
         }
     }
@@ -237,7 +237,7 @@ namespace WeaponsGen {
 
     void handle_boneClub(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_illagersBane(p, t);
         }
     }
@@ -252,11 +252,11 @@ namespace WeaponsGen {
 
     void handle_claymore(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_leeching(p, t);
         }
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_swirling(p, t);
         }
     }
@@ -267,36 +267,36 @@ namespace WeaponsGen {
 
     void handle_spongeStriker(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_waterDamage(p, t);
         }
     }
 
     void handle_cutlass(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_weakening(p, t);
         }
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_rampaging(p, t);
         }
     }
 
     void handle_daggers(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_freezing(p, t);
         }
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_enigmaResonator(p, t);
         }
     }
 
     void handle_doubleaxe(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_shockwave(p, t);
         }
     }
@@ -307,26 +307,26 @@ namespace WeaponsGen {
 
     void handle_glaive(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_smiting(p, t);
         }
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_poisonCloud(p, t);
         }
     }
 
     void handle_hammer(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_thundering(p, t);
         }
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_gravity(p, t);
         }
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_gravitySpooky(p, t);
         }
     }
@@ -341,14 +341,14 @@ namespace WeaponsGen {
 
     void handle_rapier(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_busyBee(p, t);
         }
     }
 
     void handle_soul_knife(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_soulSiphon(p, t);
         }
     }
@@ -359,25 +359,25 @@ namespace WeaponsGen {
 
     void handle_soulScythe(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_freezingSpooky(p, t);
         }
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_chains(p, t);
         }
     }
 
     void handle_tempest_knife(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_rushdown(p, t);
         }
     }
 
     void handle_whip(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_whip(p, t);
         }
     }
@@ -388,7 +388,7 @@ namespace WeaponsGen {
 
     void handle_voidBlades(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_voidStrike(p, t);
         }
     }
@@ -399,28 +399,28 @@ namespace WeaponsGen {
 
     void handle_rushSpear(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_looting(p, t);
         }
     }
 
     void handle_mace(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_radiance(p, t);
         }
     }
 
     void handle_sickles(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_prospector(p, t);
         }
     }
 
     void handle_pickaxe(endstone::Player& p, endstone::Actor& t) {
         // chance execution logic wrapper
-        if (((float)rand()/RAND_MAX) < 0.25f) {
+        if (((float)rand()/(float)RAND_MAX) < 0.25f) {
             trigger_golemDamage(p, t);
         }
     }
