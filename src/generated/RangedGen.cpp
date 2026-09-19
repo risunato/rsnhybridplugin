@@ -215,8 +215,8 @@ namespace RangedGen {
         if (!p.isValid() || !t.isValid()) return;
         std::lock_guard<std::mutex> lock(HybridEngine::engineMutex);
 
-        (void)p.performCommand("particle dungeons:" + particleType + "_boom ~ ~1 ~");
-        (void)p.performCommand("particle dungeons:" + particleType + "_boom_dust ~ ~1 ~");
+        (void)p.performCommand("particle dungeons:generic_boom ~ ~1 ~");
+        (void)p.performCommand("particle dungeons:generic_boom_dust ~ ~1 ~");
         (void)p.performCommand("playsound random.explode @a ~ ~ ~ 1.0 1.0");
     }
 
